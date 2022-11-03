@@ -47,8 +47,12 @@ public class ChooseHeroPanel : BasePanel
         //开始游戏
         Btn_start.onClick.AddListener(() =>
         {
-            //TODO:开始游戏逻辑
-            print("开始游戏");
+            //切换到选择地图面板
+            UIManager.Instance.ShowPanel<ChooseLevelPanel>("ChooseLevelPanel");
+            UIManager.Instance.HidePanel("ChooseHeroPanel",false);
+            //移除当前模型
+            Destroy(heroObj.gameObject);
+            
         });
 
         //切换角色

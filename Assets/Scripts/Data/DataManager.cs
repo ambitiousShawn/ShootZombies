@@ -20,12 +20,17 @@ public class DataManager
     //角色数据
     public List<RoleInfo> roleInfoList;
 
+    //场景数据
+    public List<SceneInfo> sceneInfoList;
+
     private DataManager()
     {
         //初始化音效数据
         musicData = JsonMgr.Instance.LoadData<MusicData>("MusicData");
         //初始化角色数据
         roleInfoList = JsonMgr.Instance.LoadData<List<RoleInfo>>("RoleInfo");
+        //初始化场景数据
+        sceneInfoList = JsonMgr.Instance.LoadData<List<SceneInfo>>("SceneInfo");
     }
 
     //保存音乐数据信息
@@ -39,5 +44,11 @@ public class DataManager
     public void SaveRoleData()
     {
         JsonMgr.Instance.SaveData(roleInfoList, "RoleInfoList");
+    }
+
+    //保存场景信息
+    public void SaveSceneData()
+    {
+        JsonMgr.Instance.SaveData(sceneInfoList, "SceneInfoList");
     }
 }
