@@ -1,0 +1,10 @@
+[
+{"id":1,"res":"Role/Engineer_工程师","attack":4,"lockMoney":0,"hp":200,"tips":"杰尼(工程师)","effect":"effect/1"},
+{"id":2,"res":"Role/Flammer_火焰兵","attack":4,"lockMoney":0,"hp":100,"tips":"福蕾姆(火焰兵)","effect":"effect/1"},
+{"id":3,"res":"Role/Infantry_步兵","attack":4,"lockMoney":0,"hp":100,"tips":"因芬特尔(步兵)","effect":"effect/1"},
+{"id":4,"res":"Role/Gunner_枪手","attack":4,"lockMoney":0,"hp":100,"tips":"高尼尔(枪手)","effect":"effect/1"},
+{"id":5,"res":"Role/Medic_医疗兵","attack":4,"lockMoney":0,"hp":100,"tips":"麦迪克(医疗兵)","effect":"effect/1"},
+{"id":6,"res":"Role/Sniper_狙击手","attack":2,"lockMoney":0,"hp":100,"tips":"斯内普尔(狙击手)","effect":"effect/1"},
+{"id":7,"res":"Role/Officer_军官","attack":3,"lockMoney":0,"hp":100,"tips":"奥菲丝(军官)","effect":"effect/1"},
+{"id":8,"res":"Role/Scout_侦察兵","attack":7,"lockMoney":0,"hp":100,"tips":"斯高尔德(侦察兵)","effect":"effect/1"}
+]

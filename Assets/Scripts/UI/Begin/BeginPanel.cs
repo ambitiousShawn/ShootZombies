@@ -24,6 +24,8 @@ public class BeginPanel : BasePanel
             Camera.main.GetComponent<CameraFollow>().switchSelectAnim = true;
             //隐藏开始面板
             UIManager.Instance.HidePanel("BeginPanel",false);
+            //显示选英雄面板
+            UIManager.Instance.ShowPanel<ChooseHeroPanel>("ChooseHeroPanel");
         });
 
         btn_Setting.onClick.AddListener(() =>

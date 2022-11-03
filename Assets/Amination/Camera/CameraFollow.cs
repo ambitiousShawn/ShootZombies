@@ -8,6 +8,8 @@ public class CameraFollow : MonoBehaviour
     private Camera mainCam;
     //选择切换角色后需要移动到的位置
     public Transform selectPos;
+    //相机的初始位置
+    private Transform beginPos;
 
     #region 布尔变量
     public bool switchSelectAnim = false;
@@ -17,6 +19,11 @@ public class CameraFollow : MonoBehaviour
     void Awake()
     {
         mainCam = Camera.main;
+    }
+
+    private void Start()
+    {
+        beginPos = transform;    
     }
 
     private void Update()
@@ -31,6 +38,12 @@ public class CameraFollow : MonoBehaviour
     {
         GetComponent<Animator>().enabled = false;
         MoveToTarget(selectPos);
+    }
+
+    public void MoveToBegin()
+    {
+        MoveToTarget(beginPos);
+        GetComponent<Animator>().enabled = true;
     }
 
 
