@@ -288,18 +288,6 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Fire Layer
-    m_StateMachine: {fileID: -1306044108880533200}
-    m_Mask: {fileID: 31900000, guid: 6037de9c24716b840b569563bcfceedd, type: 2}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 1
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
-  - serializedVersion: 5
     m_Name: Crouch Layer
     m_StateMachine: {fileID: 1539760077141253688}
     m_Mask: {fileID: 0}
@@ -317,6 +305,18 @@ AnimatorController:
     m_BlendingMode: 0
     m_SyncedLayerIndex: 0
     m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: Fire Layer
+    m_StateMachine: {fileID: -1306044108880533200}
+    m_Mask: {fileID: 31900000, guid: 6037de9c24716b840b569563bcfceedd, type: 2}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -404,7 +404,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 25790d786874b0d4792193300a38ab87, type: 3}
+  m_Motion: {fileID: 7400000, guid: 52d5e57f1eb5ec14fa664a04cacc2108, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

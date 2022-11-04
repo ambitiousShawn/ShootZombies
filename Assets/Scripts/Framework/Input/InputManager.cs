@@ -17,17 +17,36 @@ public class InputManager : Singleton<InputManager>
     {
         if (!isOpen) 
             return;
-        CheckKey(KeyCode.T);
+
+        //键盘输入检测
+        CheckKey(KeyCode.LeftShift);
+        CheckKey(KeyCode.LeftControl);
+        //鼠标输入检测
+        CheckMouse(0);
+        CheckMouse(1);
     }
 
+    //键盘相关
     private void CheckKey(KeyCode keycode)
     {
+        
         if (Input.GetKeyDown(keycode))
-            EventManager.Instance.EventTrigger("KeyDown", keycode);
+            EventManager.Instance.EventTrigger<KeyCode>("KeyDown", keycode);
         if (Input.GetKeyUp(keycode))
-            EventManager.Instance.EventTrigger("KeyUp", keycode);
+            EventManager.Instance.EventTrigger<KeyCode>("KeyUp", keycode);
         if (Input.GetKey(keycode))
-            EventManager.Instance.EventTrigger("Key", keycode);
+            EventManager.Instance.EventTrigger<KeyCode>("Key", keycode);
+    }
+
+    //鼠标相关
+    private void CheckMouse(int mouseEvent)
+    {
+        if (Input.GetMouseButtonDown(mouseEvent))
+            EventManager.Instance.EventTrigger<int>("MouseDown", mouseEvent);
+        if (Input.GetMouseButtonUp(mouseEvent))
+            EventManager.Instance.EventTrigger<int>("MouseUp", mouseEvent);
+        if (Input.GetMouseButton(mouseEvent))
+            EventManager.Instance.EventTrigger<int>("Mouse", mouseEvent);
     }
 
     //是否开启输入检测
