@@ -18,8 +18,22 @@ public class Player : MonoBehaviour
     //枪的开火点位置
     public Transform firePoint;
 
+    //Test:玩家信息
+    private int currHp;
+    private RoleInfo info;
+    public GamePanel panel;
+
+    private void Awake()
+    {
+        //Test:加载出血量UI
+        UIManager.Instance.ShowPanel<GamePanel>("GamePanel");
+    }
+
     void Start()
     {
+        //Test:玩家信息赋值
+        info = DataManager.Instance.roleInfoList[0];
+        currHp = info.hp;
 
         //输入事件
         InputManager.Instance.SwitchState(true);
@@ -29,8 +43,13 @@ public class Player : MonoBehaviour
 
         anim = GetComponent<Animator>();
         characterMove = GetComponent<CharacterMove>();
+
         photographer = Camera.main.transform.parent.GetComponent<Photographer>();
         photographer.InitCamera(followTarget);
+
+        //Test:
+        panel = GameObject.Find("Canvas/GamePanel").GetComponent<GamePanel>();
+        //panel.UpdateHpBar(currHp, info.hp);
     }
 
     void Update()
@@ -102,6 +121,15 @@ public class Player : MonoBehaviour
             //翻滚逻辑
             anim.SetTrigger("Roll");
         }
+    }
+
+    //受伤逻辑
+    public void Wound(int damage)
+    {
+        //扣血
+        currHp -= damage;
+        //更新血条UI
+        panel.UpdateHpBar(currHp, info.hp);
     }
 
     #region 动画事件

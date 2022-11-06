@@ -26,9 +26,11 @@ public class GamePanel : BasePanel
     //更新血条方法
     public void UpdateHpBar(int currHp,int maxHp)
     {
+        float currHp1 = (float)currHp;
+        float maxHp1 = (float)maxHp; 
         //更新血条长度
-        ScrollBar_hp.size = currHp / maxHp;
+        ScrollBar_hp.size = currHp1 / maxHp1;
         //更新文字内容
-        Txt_hpValue.text = currHp + "/" + maxHp;
+        Txt_hpValue.text = currHp1 + "/" + maxHp1;
     }
 }

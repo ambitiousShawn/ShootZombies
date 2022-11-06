@@ -49,6 +49,7 @@ public class UIManager : Singleton<UIManager>
             obj.transform.SetParent(canvas);
             obj.transform.localPosition = Vector3.zero;
             obj.transform.localScale = Vector3.one;
+            obj.name = panelName;
 
             (obj.transform as RectTransform).offsetMax = Vector2.zero;
             (obj.transform as RectTransform).offsetMin = Vector2.zero;

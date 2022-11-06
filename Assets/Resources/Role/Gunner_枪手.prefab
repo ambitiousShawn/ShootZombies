@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708987132}
   - component: {fileID: 8108817442722851976}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_02_Scout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442709021014}
   - component: {fileID: 8108817442723060456}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_05_engineer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708997834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708983272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708989192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708969982}
   - component: {fileID: 8108817442723037652}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_13_gasmask_general
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708973226}
   - component: {fileID: 8108817442723035804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_06_medic_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708971916}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Toe0Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708985216}
   - component: {fileID: 8108817442722829642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_05_engineer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708970234}
   - component: {fileID: 8108817442723047572}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_03_scout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708997650}
   - component: {fileID: 8108817442722835114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_11_gasmask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708979858}
   - component: {fileID: 8108817442718874470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "Gunner_\u67AA\u624B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 8108817442709003562}
   - component: {fileID: 8108817442708212856}
   - component: {fileID: 8108817442706989240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: backpack_ammobox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442709000522}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708931400}
   - component: {fileID: 8108817442722831284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_07_unequipped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708931828}
   - component: {fileID: 8108817442722852428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_15_gunner_only
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708965506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Backpack_container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708958138}
   - component: {fileID: 8108817442722838696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_10_glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708958192}
   - component: {fileID: 8108817442723046700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_12_gasmask_helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708974970}
   - component: {fileID: 8108817442723005558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_04_sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708952596}
   - component: {fileID: 8108817442723008860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_09_general
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708952448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708950390}
   - component: {fileID: 8108817442723055544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_04_sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,7 +1678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708945086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1710,7 +1710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708976140}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1743,7 +1743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708986868}
   - component: {fileID: 8108817442722839396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_14_gasmask_medic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708979844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1861,7 +1861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708914654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708919822}
   - component: {fileID: 8108817442722836308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_02_gunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1995,7 +1995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442709024870}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2027,7 +2027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708971102}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708988660}
   - component: {fileID: 8108817442723034832}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_06_medic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,7 +2160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708986314}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2194,7 +2194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708991796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 Footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2225,7 +2225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708964070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708929092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2290,7 +2290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708998154}
   - component: {fileID: 8108817442723006146}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_09_general
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2377,7 +2377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708991868}
   - component: {fileID: 8108817442722833898}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_00_unequipped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2464,7 +2464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708933660}
   - component: {fileID: 8108817442723064596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_07_medic_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2550,7 +2550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708950140}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2583,7 +2583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442709026120}
   - component: {fileID: 8108817442723028190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_08_beret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2670,7 +2670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442709005020}
   - component: {fileID: 8108817442723041088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Head_01_infantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708998452}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Toe0Nub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2787,7 +2787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708962028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2820,7 +2820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708962994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 L Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2852,7 +2852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708915478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2884,7 +2884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708969822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WeaponContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2917,7 +2917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708977804}
   - component: {fileID: 8108817442723018908}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_01_infantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3017,7 +3017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708973278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 HeadNub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708971096}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3080,7 +3080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442709008090}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3112,7 +3112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108817442708997002}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bip001 R Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3145,7 +3145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8108817442708951620}
   - component: {fileID: 8108817442723029652}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TS_Body_08_trench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3246,6 +3246,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5977258d1679e6c43bceba1941e91837, type: 3}
       propertyPath: m_Name
       value: weapon_handgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5977258d1679e6c43bceba1941e91837, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5977258d1679e6c43bceba1941e91837, type: 3}
       propertyPath: m_RootOrder

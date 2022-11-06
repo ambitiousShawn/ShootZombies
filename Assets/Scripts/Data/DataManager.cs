@@ -23,6 +23,9 @@ public class DataManager
     //场景数据
     public List<SceneInfo> sceneInfoList;
 
+    //怪物数据
+    public List<MonsterInfo> monsterInfoList;
+
     private DataManager()
     {
         //初始化音效数据
@@ -31,6 +34,8 @@ public class DataManager
         roleInfoList = JsonMgr.Instance.LoadData<List<RoleInfo>>("RoleInfo");
         //初始化场景数据
         sceneInfoList = JsonMgr.Instance.LoadData<List<SceneInfo>>("SceneInfo");
+        //初始化怪物数据
+        monsterInfoList = JsonMgr.Instance.LoadData<List<MonsterInfo>>("MonsterInfo");
     }
 
     //保存音乐数据信息
@@ -50,5 +55,11 @@ public class DataManager
     public void SaveSceneData()
     {
         JsonMgr.Instance.SaveData(sceneInfoList, "SceneInfoList");
+    }
+
+    //保存怪物信息
+    public void SaveMonsterData()
+    {
+        JsonMgr.Instance.SaveData(monsterInfoList, "MonsterInfoList");
     }
 }
