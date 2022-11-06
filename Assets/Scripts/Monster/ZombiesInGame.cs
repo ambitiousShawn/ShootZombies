@@ -44,6 +44,7 @@ public class ZombiesInGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        IsDead();
         if (isDead) return;
         CheckAttackRangeAndTakeDamage();
     }
@@ -67,16 +68,36 @@ public class ZombiesInGame : MonoBehaviour
         targetPos = GameObject.Find("Player").transform;
     }
 
+    //丧尸的死亡
+    private void IsDead()
+    {
+        if (currHp <= 0)
+        {
+            //玩家死亡后，将其目标点设置为自身，并关闭跟踪AI。
+            anim.SetBool("isDead", true);
+            anim.SetBool("canAtk", false);
+            agent.SetDestination(this.transform.position);
+            agent.isStopped = true;
+            
+            isDead = true;
+        }
+        else
+        {
+            isDead = false;
+        }
+    }
+
     //僵尸的受伤(由玩家范围检测后调用)
     public void Wound(int damage)
     {
         //播放受伤动画
-        anim.SetTrigger("Wound");
+        //anim.SetTrigger("Wound");
         //扣除自身血量
         currHp -= damage;
+        print("当前剩余血量" + currHp);
     }
 
-    //攻击距离检测以及攻击并造成伤害
+    //攻击距离检测以及攻击并造成伤害(核心AI，待优化)
     private void CheckAttackRangeAndTakeDamage()
     {
         //TODO:丧尸出生后，会优先Idle，当发现自己身前存在玩家时，会进行猛烈嘶吼后追逐，近身后开始攻击。当玩家拉开时，会继续跟进追逐。

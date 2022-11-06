@@ -135,10 +135,11 @@ public class Player : MonoBehaviour
     #region 动画事件
     public void TakeKnifeDamage()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position + Vector3.forward + Vector3.up, 1 , 1 << LayerMask.NameToLayer("Monster"));
+        Collider[] colliders = Physics.OverlapSphere(transform.position + Vector3.forward + Vector3.up, 1.5f , 1 << LayerMask.NameToLayer("Monster"));
         foreach (Collider c in colliders)
         {
             //TODO:遍历到受到伤害的所有碰撞体，对其调用受伤函数
+            c.GetComponent<ZombiesInGame>().Wound(info.attack);
         }
     }
 
@@ -146,11 +147,39 @@ public class Player : MonoBehaviour
     //拿枪的造成伤害事件
     public void TakeGunDamage()
     {
+        //释放特效
+        ResourcesManager.Instance.LoadAsync<GameObject>("Effect/FireProjectileMega", (obj) =>
+        {
+            obj.transform.position = firePoint.position;
+            obj.transform.rotation = Quaternion.AngleAxis(90,firePoint.forward);
+            Destroy(obj.gameObject,1f);
+        });
+        
         RaycastHit[] raycastHits =  Physics.RaycastAll(new Ray(firePoint.position, firePoint.forward), 1000, 1 << LayerMask.NameToLayer("Monster"));
         
         foreach (RaycastHit r in raycastHits)
         {
             //TODO:遍历所有被射线检测到的物体，对其调用受伤函数
+            r.transform.GetComponent<ZombiesInGame>().Wound(info.attack);
+        }
+    }
+
+    public void TakeFireDamage()
+    {
+        //释放特效
+        ResourcesManager.Instance.LoadAsync<GameObject>("Effect/FireProjectileMega", (obj) =>
+        {
+            obj.transform.position = firePoint.position;
+            obj.transform.rotation = Quaternion.AngleAxis(90, firePoint.forward);
+            obj.transform.Translate(firePoint.forward * 5 * Time.deltaTime);
+            Destroy(obj.gameObject, 1f);
+        });
+
+        Collider[] colliders = Physics.OverlapSphere(firePoint.position, 1.5f, 1 << LayerMask.NameToLayer("Monster"));
+        foreach (Collider c in colliders)
+        {
+            //TODO:遍历到受到伤害的所有碰撞体，对其调用受伤函数
+            c.GetComponent<ZombiesInGame>().Wound(info.attack);
         }
     }
     #endregion
