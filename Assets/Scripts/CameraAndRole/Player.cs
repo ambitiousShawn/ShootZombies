@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private Photographer photographer;
     //动画组件
     private Animator anim;
+    //刚体组件
+    private Rigidbody rigidbody;
 
     //摄像机的根位置
     public Transform followTarget;
@@ -23,11 +25,8 @@ public class Player : MonoBehaviour
     private RoleInfo info;
     public GamePanel panel;
 
-    private void Awake()
-    {
-        //Test:加载出血量UI
-        UIManager.Instance.ShowPanel<GamePanel>("GamePanel");
-    }
+    //是否可以跳跃
+    bool canJump = true;
 
     void Start()
     {
@@ -43,6 +42,7 @@ public class Player : MonoBehaviour
 
         anim = GetComponent<Animator>();
         characterMove = GetComponent<CharacterMove>();
+        rigidbody = GetComponent<Rigidbody>();
 
         photographer = Camera.main.transform.parent.GetComponent<Photographer>();
         photographer.InitCamera(followTarget);
@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
         //Test:
         panel = GameObject.Find("Canvas/GamePanel").GetComponent<GamePanel>();
         //panel.UpdateHpBar(currHp, info.hp);
+
+        anim.SetBool("canJump", true);
     }
 
     void Update()
@@ -87,6 +89,11 @@ public class Player : MonoBehaviour
         if (key == KeyCode.Space)
         {
             //TODO:跳跃逻辑
+            print("按下跳跃键");
+            
+            if (canJump)
+                rigidbody.velocity = new Vector3(rigidbody.velocity.x, 5, rigidbody.velocity.z);
+            
         }
 
         //蹲起
@@ -132,6 +139,22 @@ public class Player : MonoBehaviour
         panel.UpdateHpBar(currHp, info.hp);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            canJump = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            canJump = false;
+        }
+    }
+
     #region 动画事件
     public void TakeKnifeDamage()
     {
@@ -148,11 +171,11 @@ public class Player : MonoBehaviour
     public void TakeGunDamage()
     {
         //释放特效
-        ResourcesManager.Instance.LoadAsync<GameObject>("Effect/FireProjectileMega", (obj) =>
+        ResourcesManager.Instance.LoadAsync<GameObject>("Effect/FireImpactSmall", (obj) =>
         {
             obj.transform.position = firePoint.position;
             obj.transform.rotation = Quaternion.AngleAxis(90,firePoint.forward);
-            Destroy(obj.gameObject,1f);
+            Destroy(obj.gameObject,0.8f);
         });
         
         RaycastHit[] raycastHits =  Physics.RaycastAll(new Ray(firePoint.position, firePoint.forward), 1000, 1 << LayerMask.NameToLayer("Monster"));
@@ -163,7 +186,7 @@ public class Player : MonoBehaviour
             r.transform.GetComponent<ZombiesInGame>().Wound(info.attack);
         }
     }
-
+    
     public void TakeFireDamage()
     {
         //释放特效
@@ -171,8 +194,7 @@ public class Player : MonoBehaviour
         {
             obj.transform.position = firePoint.position;
             obj.transform.rotation = Quaternion.AngleAxis(90, firePoint.forward);
-            obj.transform.Translate(firePoint.forward * 5 * Time.deltaTime);
-            Destroy(obj.gameObject, 1f);
+            Destroy(obj.gameObject, 0.8f);
         });
 
         Collider[] colliders = Physics.OverlapSphere(firePoint.position, 1.5f, 1 << LayerMask.NameToLayer("Monster"));

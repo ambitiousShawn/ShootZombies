@@ -21,6 +21,7 @@ public class InputManager : Singleton<InputManager>
         //º¸≈Ã ‰»ÎºÏ≤‚
         CheckKey(KeyCode.LeftShift);
         CheckKey(KeyCode.LeftControl);
+        CheckKey(KeyCode.Space);
         // Û±Í ‰»ÎºÏ≤‚
         CheckMouse(0);
         CheckMouse(1);
