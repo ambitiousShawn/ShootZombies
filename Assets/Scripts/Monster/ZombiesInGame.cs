@@ -104,9 +104,9 @@ public class ZombiesInGame : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Emerge"))
             return;
 
-        if (Vector3.Angle(transform.forward, (targetPos.position - transform.position).normalized) < 60 &&
-            Vector3.Angle(transform.forward, (targetPos.position - transform.position).normalized) > -60 &&
-            Vector3.Distance(transform.position, targetPos.position) < 10)
+        if (Vector3.Angle(transform.forward, (targetPos.position - transform.position).normalized) < 90 &&
+            Vector3.Angle(transform.forward, (targetPos.position - transform.position).normalized) > -90 &&
+            Vector3.Distance(transform.position, targetPos.position) < 15)
         {
             //发现玩家目标
             print("发现玩家");

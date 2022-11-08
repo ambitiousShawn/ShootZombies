@@ -25,8 +25,6 @@ public class UIManager : Singleton<UIManager>
     {
         canvas = GameObject.Find("Canvas").transform;
         eventSystem = GameObject.Find("EventSystem").transform;
-        GameObject.DontDestroyOnLoad(canvas.gameObject);
-        GameObject.DontDestroyOnLoad(eventSystem.gameObject);
     }
 
     //ÏÔÊ¾Ä³Ãæ°å

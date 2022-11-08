@@ -94,7 +94,15 @@ public class ChooseHeroPanel : BasePanel
     private void SwitchRoleModel()
     {
         currRoleInfo = DataManager.Instance.roleInfoList[heroIndex];
-        heroObj = Instantiate(Resources.Load<GameObject>(currRoleInfo.res), heroTrans.position, heroTrans.rotation);
+        ResourcesManager.Instance.LoadAsync<GameObject>(currRoleInfo.res, (obj) =>
+         {
+             //将角色创建出来后，删除移动组件
+             obj.transform.position = heroTrans.position;
+             obj.transform.rotation = heroTrans.rotation; ;
+             if (obj.GetComponent<Player>())
+                obj.GetComponent<Player>().enabled = false;
+             heroObj = obj;
+         });
         //更新提示信息
         Txt_tips.text = currRoleInfo.tips;
     }

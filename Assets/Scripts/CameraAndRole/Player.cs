@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
 
     //枪的开火点位置
     public Transform firePoint;
+    //枪手瞄准准心
+    private Transform AimPoint;
 
     //Test:玩家信息
     private int currHp;
@@ -30,6 +33,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        //准心赋值
+        AimPoint = GameObject.Find("Canvas/AimPoint").transform;
+
         //Test:玩家信息赋值
         info = DataManager.Instance.roleInfoList[0];
         currHp = info.hp;
@@ -47,11 +53,10 @@ public class Player : MonoBehaviour
         photographer = Camera.main.transform.parent.GetComponent<Photographer>();
         photographer.InitCamera(followTarget);
 
-        //Test:
         panel = GameObject.Find("Canvas/GamePanel").GetComponent<GamePanel>();
         //panel.UpdateHpBar(currHp, info.hp);
 
-        anim.SetBool("canJump", true);
+        //anim.SetBool("canJump", true);
     }
 
     void Update()
@@ -177,14 +182,24 @@ public class Player : MonoBehaviour
             obj.transform.rotation = Quaternion.AngleAxis(90,firePoint.forward);
             Destroy(obj.gameObject,0.8f);
         });
-        
-        RaycastHit[] raycastHits =  Physics.RaycastAll(new Ray(firePoint.position, firePoint.forward), 1000, 1 << LayerMask.NameToLayer("Monster"));
-        
+
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        //RaycastHit[] raycastHits =  Physics.RaycastAll(new Ray(firePoint.position, firePoint.forward), 1000, 1 << LayerMask.NameToLayer("Monster"));
+        RaycastHit[] raycastHits = Physics.RaycastAll(ray, 1000, 1 << LayerMask.NameToLayer("Monster"));
         foreach (RaycastHit r in raycastHits)
         {
+            //修改图标颜色
+            AimPoint.GetComponent<Image>().color = Color.red;
+            //0.5秒后修改回来
+            Invoke("UpdateColor", 0.5f);
             //TODO:遍历所有被射线检测到的物体，对其调用受伤函数
             r.transform.GetComponent<ZombiesInGame>().Wound(info.attack);
         }
+    }
+
+    private void UpdateColor()
+    {
+        AimPoint.GetComponent<Image>().color = Color.white;
     }
     
     public void TakeFireDamage()

@@ -8,11 +8,10 @@ using UnityEngine;
  */
 public class FirstInit : MonoBehaviour
 {
-
     void Awake()
     {
         //开局初始化人物信息
-        ResourcesManager.Instance.LoadAsync<GameObject>("Role/Flammer_火焰兵", (obj) =>
+        ResourcesManager.Instance.LoadAsync<GameObject>("Role/Gunner_枪手", (obj) =>
          {
              //修改玩家姓名
              obj.name = "Player";

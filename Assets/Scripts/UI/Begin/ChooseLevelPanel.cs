@@ -37,7 +37,13 @@ public class ChooseLevelPanel : BasePanel
         //开始游戏逻辑
         Btn_start.onClick.AddListener(() =>
         {
-            //TODO:开始游戏
+            //添加其他场景信息，先写死
+            ScenesManager.Instance.LoadSceneAsync("Level1-Village",() =>
+            {
+                //删除选地图UI
+                UIManager.Instance.HidePanel("ChooseLevelPanel");
+            });
+
         });
 
         //上一张地图
