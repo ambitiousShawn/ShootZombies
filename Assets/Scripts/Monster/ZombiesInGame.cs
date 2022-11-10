@@ -23,22 +23,22 @@ public class ZombiesInGame : MonoBehaviour
 
     //玩家的实时位置
     private Transform targetPos;
+    //当前随机到的僵尸移动位置(未发现玩家)
+    Transform randomPos;
 
     //发现玩家的反应
     private bool isFound;
+
+    //巡逻时间间隔
+    public float PatrolInterval = 15f;
+    //巡逻计时器
+    private float timer = 0;
 
     #region 生命周期函数
     private void Awake()
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-    }
-
-    void Start()
-    {
-        //Test:测试用
-        info = DataManager.Instance.monsterInfoList[0];
-        InitZombie(info);
     }
 
     // Update is called once per frame
@@ -51,8 +51,10 @@ public class ZombiesInGame : MonoBehaviour
 
     #endregion
     //初始化僵尸(该函数由出怪点调用)
-    public void InitZombie(MonsterInfo info)
+    public void InitZombie(MonsterInfo info,Transform birthPos)
     {
+        this.info = info;
+
         //设置状态和血量
         isDead = false;
         currHp = info.hp;
@@ -91,10 +93,10 @@ public class ZombiesInGame : MonoBehaviour
     public void Wound(int damage)
     {
         //播放受伤动画
-        //anim.SetTrigger("Wound");
+        anim.SetTrigger("Wound");
         //扣除自身血量
         currHp -= damage;
-        print("当前剩余血量" + currHp);
+        //print("当前剩余血量" + currHp);
     }
 
     //攻击距离检测以及攻击并造成伤害(核心AI，待优化)
@@ -116,6 +118,7 @@ public class ZombiesInGame : MonoBehaviour
             {
                 anim.SetBool("FoundPlayer",true);
                 isFound = true;//保证不会重复播放FoundPlayer嘶吼
+                transform.LookAt(targetPos);
             }
 
             //TODO:攻击距离可写成Json持久化数据
@@ -141,8 +144,14 @@ public class ZombiesInGame : MonoBehaviour
         else
         {
             //TODO:未发现玩家，后续实现随机选择位置走路
+            timer += Time.deltaTime;
             isFound = false;
             anim.SetBool("FoundPlayer", false);
+            if (timer > PatrolInterval)
+            {
+                timer = 0;
+                Patrol();
+            }
         }
 
         //切换动画
@@ -159,6 +168,16 @@ public class ZombiesInGame : MonoBehaviour
         agent.SetDestination(targetPos.position);
     }
 
+    //僵尸的随机走动
+    private void Patrol()
+    {
+        agent.isStopped = false;
+        float RandomX = Random.Range(70,270);
+        float RandomZ = Random.Range(70,250);
+        Vector3 haha = new Vector3(RandomX, this.transform.position.y, RandomZ);
+        agent.SetDestination(haha);
+        
+    }
     #region 动画事件
     //死亡动画播完后 销毁自身
     public void DestroySelf()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5055177016868103631}
   - component: {fileID: 5055177016877293179}
+  - component: {fileID: 8573907149022793439}
   m_Layer: 7
   m_Name: "Scout_\u4FA6\u5BDF\u5175"
   m_TagString: Untagged
@@ -77,6 +78,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8573907149022793439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055177016867816193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6934d71ebb0d649a150dedce66549a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionPanel: {fileID: 0}
 --- !u!1 &5055177016867818311
 GameObject:
   m_ObjectHideFlags: 0

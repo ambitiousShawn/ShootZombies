@@ -1,5 +1,5 @@
 [
-{"id":1,"res":"Role/Engineer_工程师","attack":400,"lockMoney":0,"hp":200,"tips":"杰尼(工程师)","effect":"effect/1"},
+{"id":1,"res":"Role/Engineer_工程师","attack":4,"lockMoney":0,"hp":200,"tips":"杰尼(工程师)","effect":"effect/1"},
 {"id":2,"res":"Role/Flammer_火焰兵","attack":4,"lockMoney":0,"hp":100,"tips":"福蕾姆(火焰兵)","effect":"effect/1"},
 {"id":3,"res":"Role/Infantry_步兵","attack":4,"lockMoney":0,"hp":100,"tips":"因芬特尔(步兵)","effect":"effect/1"},
 {"id":4,"res":"Role/Gunner_枪手","attack":4,"lockMoney":0,"hp":100,"tips":"高尼尔(枪手)","effect":"effect/1"},

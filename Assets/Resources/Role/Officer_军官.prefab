@@ -923,6 +923,7 @@ GameObject:
   - component: {fileID: 2047932924}
   - component: {fileID: 2047932922}
   - component: {fileID: 2047932923}
+  - component: {fileID: -7631801054591888593}
   m_Layer: 7
   m_Name: "Officer_\u519B\u5B98"
   m_TagString: Untagged
@@ -1048,6 +1049,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxWalkSpeed: 5
+--- !u!114 &-7631801054591888593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008254284679175650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6934d71ebb0d649a150dedce66549a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionPanel: {fileID: 0}
 --- !u!1 &6008254284679181250
 GameObject:
   m_ObjectHideFlags: 0

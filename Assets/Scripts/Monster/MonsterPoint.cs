@@ -6,26 +6,24 @@ public class MonsterPoint : MonoBehaviour
 {
     //生成的怪物id(用于属性赋值与模型创建)
     public List<int> monsterIDs;
-    //当前丧尸潮的丧尸类型
-    private int currId;
-
-    //生成丧尸潮的周期
-    public float monstersInterval;
-
-    //一波丧尸潮有多少丧尸
-    public int monsterNumOneWave;
-    //当前创建了多少只
-    private int currMonsterNum;
-
     
 
-    //单只丧尸的创建时间
-    public float createOneInterval;
+    #region 刷怪点的设置
+    [Header("总共生成多少只丧尸")]
+    public int monsterNumOneWave = 15;
+    [Header("生成单只丧尸的时间间隔")]
+    public float createOneInterval = 3f;
+    [Header("生成第一只丧尸的时间")]
+    public float firstDelayTime = 0;
+    #endregion
 
-    //开局玩家的准备时间
-    public float firstDelayTime;
+    #region 刷怪点的数据记录
+    //当前丧尸潮的丧尸类型
+    private int currId;
+    //当前创建了多少只
+    private int currMonsterNum;
+    #endregion
 
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("CreateWave", firstDelayTime);
@@ -51,22 +49,17 @@ public class MonsterPoint : MonoBehaviour
         GameObject zombieObj = ResourcesManager.Instance.Load<GameObject>(info.res);
         //调整信息
         zombieObj.transform.position = transform.position;
-        zombieObj.transform.rotation = Quaternion.identity;
+        zombieObj.transform.rotation = Random.rotation ;
 
         //怪物脚本
         ZombiesInGame zombie = zombieObj.AddComponent<ZombiesInGame>();
-        zombie.InitZombie(info);
+        zombie.InitZombie(info,transform);
 
         ++currMonsterNum;
 
         if (currMonsterNum >= monsterNumOneWave)
         {
-            //该波丧尸数量创建完成,准备创建下波丧尸
-            if (1 == 0)
-            {
-
-            }
-
+            //None
         }
         else
         {
