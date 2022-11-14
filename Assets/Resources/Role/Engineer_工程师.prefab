@@ -2369,7 +2369,7 @@ GameObject:
   - component: {fileID: 8815036149538178003}
   m_Layer: 7
   m_Name: "Engineer_\u5DE5\u7A0B\u5E08"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2493,6 +2493,8 @@ MonoBehaviour:
   followTarget: {fileID: 994943522}
   firePoint: {fileID: 0}
   panel: {fileID: 0}
+  isGod: 0
+  rollForce: 2
 --- !u!114 &8815036149538178003
 MonoBehaviour:
   m_ObjectHideFlags: 0

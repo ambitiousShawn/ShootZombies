@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: -7631801054591888593}
   m_Layer: 7
   m_Name: "Officer_\u519B\u5B98"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1036,6 +1036,8 @@ MonoBehaviour:
   followTarget: {fileID: 122482292}
   firePoint: {fileID: 1664949204}
   panel: {fileID: 0}
+  isGod: 0
+  rollForce: 2
 --- !u!114 &2047932923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6934d71ebb0d649a150dedce66549a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionPanel: {fileID: 0}
 --- !u!1 &6008254284679181250
 GameObject:
   m_ObjectHideFlags: 0

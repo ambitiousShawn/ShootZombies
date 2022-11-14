@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8573907149022793439}
   m_Layer: 7
   m_Name: "Scout_\u4FA6\u5BDF\u5175"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6934d71ebb0d649a150dedce66549a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionPanel: {fileID: 0}
 --- !u!1 &5055177016867818311
 GameObject:
   m_ObjectHideFlags: 0

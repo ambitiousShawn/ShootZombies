@@ -6,6 +6,9 @@ public class MonsterPoint : MonoBehaviour
 {
     //生成的怪物id(用于属性赋值与模型创建)
     public List<int> monsterIDs;
+
+    //存储生成的僵尸
+    private GameObject Zombies;
     
 
     #region 刷怪点的设置
@@ -27,6 +30,7 @@ public class MonsterPoint : MonoBehaviour
     void Start()
     {
         Invoke("CreateWave", firstDelayTime);
+        Zombies = GameObject.Find("Zombies");
     }
 
     //开始创建一波尸潮
@@ -50,6 +54,7 @@ public class MonsterPoint : MonoBehaviour
         //调整信息
         zombieObj.transform.position = transform.position;
         zombieObj.transform.rotation = Random.rotation ;
+        zombieObj.transform.parent = Zombies.transform;
 
         //怪物脚本
         ZombiesInGame zombie = zombieObj.AddComponent<ZombiesInGame>();

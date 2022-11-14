@@ -3206,7 +3206,7 @@ GameObject:
   - component: {fileID: 5864663660661184533}
   m_Layer: 7
   m_Name: "Flammer_\u706B\u7130\u5175"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3330,6 +3330,8 @@ MonoBehaviour:
   followTarget: {fileID: 1784032904931265967}
   firePoint: {fileID: 1784032905647560857}
   panel: {fileID: 0}
+  isGod: 0
+  rollForce: 2
 --- !u!114 &5864663660661184533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,7 +3344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6934d71ebb0d649a150dedce66549a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionPanel: {fileID: 0}
 --- !u!1 &6832873360303060774
 GameObject:
   m_ObjectHideFlags: 0

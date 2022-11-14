@@ -11,7 +11,7 @@ public class FirstInit : MonoBehaviour
     void Awake()
     {
         //开局初始化人物信息
-        ResourcesManager.Instance.LoadAsync<GameObject>("Role/Engineer_工程师", (obj) =>
+        ResourcesManager.Instance.LoadAsync<GameObject>("Role/Gunner_枪手", (obj) =>
          {
              //修改玩家姓名
              obj.name = "Player";
@@ -24,6 +24,6 @@ public class FirstInit : MonoBehaviour
 
 
         //初始化BGM
-        //AudioManager.Instance.PlayBGM("BKMusic");
+        AudioManager.Instance.PlayBGM("废城");
     }
 }

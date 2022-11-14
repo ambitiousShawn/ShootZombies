@@ -20,14 +20,27 @@ public class Interaction : MonoBehaviour
     #endregion
 
     //当前净化物质的拥有数量
-    private int MedicalNum = 0;
+    private int medicalNum;
+    public int MedicalNum
+    {
+        get { return medicalNum; }
+        set
+        {
+            medicalNum = value;
+            panel.UpdateItemNum(medicalNum);
+        }
+    }
     //当前接触的净化物质
     private GameObject currObj;
+
+    //UI面板
+    private GamePanel panel;
 
     private void Start()
     {
         ActionPanel = GameObject.Find("Canvas/ActionPanel");
         info = ActionPanel.transform.GetComponentInChildren<Text>();
+        panel = GameObject.Find("Canvas/GamePanel").GetComponent<GamePanel>();
     }
 
     private void Update()
@@ -36,11 +49,13 @@ public class Interaction : MonoBehaviour
         if (isPollution && Input.GetKeyDown(KeyCode.E))
         {
             //TODO:满足条件：净化植物
-            if (MedicalNum > 0)
+            if (medicalNum > 0)
             {
-                //TODO:净化植物
-                MedicalNum--;
-                print("净化成功" + MedicalNum);
+                print(--MedicalNum);           
+                info.text = "净化成功";
+                Destroy(currObj.gameObject);
+                isPollution = false;
+                currObj = null;
             }
             //不满足条件：给予提示
             else
@@ -52,18 +67,22 @@ public class Interaction : MonoBehaviour
         //当接触到净化物质
         if (isCollection && Input.GetKeyDown(KeyCode.E))
         {
+            //Bug：删除拾取物后，并未执行走出区域的逻辑。
             MedicalNum++;
-            HideTipPanel();
             Destroy(currObj.gameObject);
+            isCollection = false;
+            currObj = null;
+
         }
     }
 
     //显示提示交互面板(提示内容)
-    private void ShowTipPanel(string info)
+    private void ShowTipPanel(string info, float time = 999)
     {
         //更新提示内容
         this.info.text = info;
         ActionPanel.GetComponent<CanvasGroup>().alpha = 1;
+        Invoke("HideTipPanel", time);
     }
 
     private void HideTipPanel()
@@ -77,14 +96,13 @@ public class Interaction : MonoBehaviour
         switch (collider.tag)
         {
             case "Interactive":
-                ShowTipPanel("按E净化该区域");
-                print("接触到可交互区域");
+                ShowTipPanel("按E净化该区域",5f);
                 isPollution = true;
+                currObj = collider.gameObject;
                 break;
 
             case "Collective":
-                ShowTipPanel("按E收集物品");
-                print("接触到可交互区域");
+                ShowTipPanel("按E收集物品",5f);
                 isCollection = true;
                 currObj = collider.gameObject;
                 break;
@@ -97,12 +115,11 @@ public class Interaction : MonoBehaviour
         {
             case "Interactive":
                 HideTipPanel();
-                print("离开到可交互区域");
                 isPollution = false;
+                currObj = null;
                 break;
             case "Collective":
                 HideTipPanel();
-                print("离开到可交互区域");
                 isCollection = false;
                 currObj = null;
                 break;
